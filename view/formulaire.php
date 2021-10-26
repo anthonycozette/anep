@@ -1,6 +1,10 @@
-<form action="../controller/form_envoi.php" method="post">
-    <div class="container">
-        <div class="row mb-3">
+<?php
+include('../include/header.php'); //Le header
+?>
+<div class="container">
+    <form action="../controller/form_envoi.php" method="post">
+
+        <div class="row mt-3">
 
             <h3>Information de l'Utilisateur du pc</h3>
 
@@ -26,7 +30,7 @@
 
         </div>
 
-        <div class="row mb-3">
+        <div class="row mt-3">
 
             <h3>Info Ordinateur</h3>
 
@@ -63,7 +67,7 @@
 
         </div>
 
-        <div class="row mb-3">
+        <div class="row mt-3">
 
             <h3>Info Service</h3>
 
@@ -99,7 +103,7 @@
 
         </div>
 
-        <div class="row mb-3">
+        <div class="row mt-3">
 
             <h3>Session Administrateur</h3>
 
@@ -140,8 +144,16 @@
 
         </div>
 
-        <div class="col-12">
+        <div class="col-12 mt-3">
             <button type="submit" class="btn btn-primary">Enregistrer</button>
         </div>
+
+
+    </form>
+    <div class="col-12 mt-3">
+        <a class="btn btn-primary" href="../public/index.php" role="button">retour</a>
     </div>
-</form>
+    <?php
+    include('../include/header.php'); //Le footer
+    ?>
+</div>
