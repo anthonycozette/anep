@@ -128,7 +128,7 @@ include('../include/header.php'); //Le header
 
             <div class="col-3">
                 <label class="form-label">Password Admin Local</label>
-                <input type="text" class="form-control" placeholder="Password Session Admin Local" name="pwdAdminLocal">
+                <input type="password" class="form-control" placeholder="Password Session Admin Local" name="pwdAdminLocal">
             </div>
 
             <div class="col-3">
@@ -138,7 +138,7 @@ include('../include/header.php'); //Le header
 
             <div class="col-3">
                 <label class="form-label">Password Admin Domaine</label>
-                <input type="text" class="form-control" placeholder="Password Session Admin Domaine" name="pwdAdminDomaine">
+                <input type="password" class="form-control" placeholder="Password Session Admin Domaine" name="pwdAdminDomaine">
             </div>
 
             <div class="col-3">

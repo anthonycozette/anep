@@ -10,11 +10,11 @@ try {
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-if ($dbh->query($stmt)) {
-    echo "<p>ordinateur ajouter avec succe;</p>";
-} else {
-    echo "<p>merci de remplir tous les champ</p>";
-}
+// if ($dbh->query($stmt)) {
+//     echo "<p>ordinateur ajouter avec succe;</p>";
+// } else {
+//     echo "<p>merci de remplir tous les champ</p>";
+// }
 
 $dbh = null;
 ?>

@@ -1,6 +1,6 @@
 <footer class="footer">
 			<div>
-				<div class="container mt-3">
+				<div class="m-3">
 					Copyright : ANEP 2021.
 				</div>
 			</div>

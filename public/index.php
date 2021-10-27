@@ -1,20 +1,16 @@
 <?php
 include('../include/header.php'); //Le header
 ?>
-
-<div class="container">
-    <h1>Mon super blog !</h1>
-    <p>Derniers billets du blog :</p>
-
-
+    <h1>Liste Ordinateur</h1>
+    
     <?php
-    require('../model/bdd.php');
+    // require('../model/bdd.php');
 
-    $req = getbdd();
+    // $req = getbdd();
 
-    require('../view/view.php'); ?>
-    <a class="btn btn-primary mt-3" href="../view/formulaire.php" role="button">Nouveau ordinateur</a>
-</div>
+    require('../view/tableau2.php'); ?>
+    <a class="btn btn-primary mt-3 ms-3" href="../view/formulaire.php" role="button">Nouveau ordinateur</a>
+
 
 <?php
 include('../include/footer.php'); //Le header
