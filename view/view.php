@@ -1,9 +1,10 @@
 <?php
-while ($donnees = $req->fetch()) {
+
+while ($donnees = $req->fetchAll()) {
 ?>
     <div class="news">
         <h3>
-            <?php echo htmlspecialchars($donnees['service']); ?>
+            <?php echo htmlspecialchars($donnees['ID']); ?>
         </h3>
 
         <p>
