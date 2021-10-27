@@ -13,8 +13,8 @@ include('../include/header.php'); //Le header
     $req = getbdd();
 
     require('../view/view.php'); ?>
-    <a class="btn btn-primary" href="../view/formulaire.php" role="button">Nouveau ordinateur</a>
+    <a class="btn btn-primary mt-3" href="../view/formulaire.php" role="button">Nouveau ordinateur</a>
 </div>
 
 <?php
-include('../include/footer.php');//Le header
+include('../include/footer.php'); //Le header
