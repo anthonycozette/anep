@@ -8,7 +8,7 @@ include('../include/header.php'); //Le header
 
     // $req = getbdd();
 
-    require('../view/tableau2.php'); ?>
+    require('../view/tableau3.php'); ?>
     <a class="btn btn-primary mt-3 ms-3" href="../view/formulaire.php" role="button">Nouveau ordinateur</a>
 
 

@@ -8,25 +8,20 @@ echo "<tr style='border: solid 1px black;'>
 <th style='border: solid 1px black;'>prenom_utlisateur</th>
 </tr>";
 
-class TableRows extends RecursiveIteratorIterator
-{
-  function __construct($it)
-  {
+class TableRows extends RecursiveIteratorIterator {
+  function __construct($it) {
     parent::__construct($it, self::LEAVES_ONLY);
   }
 
-  function current()
-  {
-    return "<td style='width:150px;border:1px solid black;'>" . parent::current() . "</td>";
+  function current() {
+    return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
   }
 
-  function beginChildren()
-  {
+  function beginChildren() {
     echo "<tr>";
   }
 
-  function endChildren()
-  {
+  function endChildren() {
     echo "</tr>" . "\n";
   }
 }
@@ -39,10 +34,10 @@ try {
 
   // set the resulting array to associative
   $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-  foreach (new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k => $v) {
+  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
     echo $v;
   }
-} catch (PDOException $e) {
+} catch(PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
 $conn = null;
