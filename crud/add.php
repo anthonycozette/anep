@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     }
     if (empty($adresseMac)) {
         $adresseMacError = 'adresse mac';
-        $valid = true;
+        $valid = false;
     }
     if (empty($dateAchat)) {
         $dateAchatError = 'date achat';
@@ -462,9 +462,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
             </div>
 
-            <div class="form-actions">
+            <div class="form-actions mt-3">
                 <input type="submit" class="btn btn-success" name="submit" value="submit">
-                <a class="btn" href="index.php">Retour</a>
+                <a class="btn btn-dark" href="index.php">Retour</a>
             </div>
 
         </form>
