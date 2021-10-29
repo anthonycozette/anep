@@ -6,6 +6,7 @@ echo "<tr style='border: solid 1px black;'>
 <th style='border: solid 1px black;'>nom_ordinateur</th>
 <th style='border: solid 1px black;'>nom_utilisateur</th>
 <th style='border: solid 1px black;'>prenom_utlisateur</th>
+<th style='border: solid 1px black;'></th>
 </tr>";
 
 class TableRows extends RecursiveIteratorIterator {
