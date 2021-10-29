@@ -24,6 +24,7 @@ if (!empty($_POST)) {
 
 <head>
     <meta charset="utf-8">
+    <title>Supprimer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../styles/styles.css" rel="stylesheet">
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22js%2Fbootstrap.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
@@ -37,7 +38,7 @@ if (!empty($_POST)) {
 
             <div class="row">
 
-                <h2>Delete a user</h2>
+                <h2>Supprimer l'Ordinateur</h2>
 
             </div>
 
@@ -46,9 +47,9 @@ if (!empty($_POST)) {
 
                 <input type="hidden" name="id" value="<?php echo $id; ?>" />
 
-                <h4>Are you sure to delete ?</h4>
+                <h5 class="mt-2">Voulez-vous vraiment supprimer l'Ordinateur ?</h5>
 
-                <div class="form-actions">
+                <div class="form-actions mt-3">
                     <button type="submit" class="btn btn-danger">Yes</button>
                     <a class="btn btn-dark" href="index.php">No</a>
                 </div>

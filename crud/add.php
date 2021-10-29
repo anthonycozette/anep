@@ -164,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Crud</title>
+    <title>Nouveau Ordinateur</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../styles/styles.css" rel="stylesheet">
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22js%2Fbootstrap.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
@@ -180,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
         <div class="row">
 
-            <h3>Ajouter un contact</h3>
+            <h3>Ajouter un Ordinateur</h3>
 
         </div>
 
@@ -463,7 +463,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
             </div>
 
             <div class="form-actions mt-3">
-                <input type="submit" class="btn btn-success" name="submit" value="submit">
+                <input type="submit" class="btn btn-success" name="submit" value="Envoyer">
                 <a class="btn btn-dark" href="index.php">Retour</a>
             </div>
 
