@@ -51,13 +51,10 @@ if (null == $id) {
 
                 <div class="control-group">
                     <label class="control-label">Nom Ordinateur: <?php echo $data['nom_ordinateur']; ?></label>
-
                 </div>
 
                 <div class="control-group">
                     <label class="control-label">Nom utilisateur: <?php echo $data['nom_utilisateur']; ?></label>
-
-
                 </div>
 
                 <div class="control-group">
@@ -83,15 +80,19 @@ if (null == $id) {
                 <div class="control-group">
                     <label class="control-label">Adresse IP: <?php echo $data['adresse_ip']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Référence: <?php echo $data['reference']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Réseau LAN: <?php echo $data['lan_reseau']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Type de Matériel: <?php echo $data['type_materiel']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">En Service: <?php echo $data['en_service']; ?></label>
                 </div>
@@ -99,24 +100,31 @@ if (null == $id) {
                 <div class="control-group">
                     <label class="control-label">Numero de Serie: <?php echo $data['numero_serie']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Systeme Exploitation: <?php echo $data['systeme_exploitation']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Adresse Mac: <?php echo $data['mac_adresse']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Date Achat: <?php echo $data['date_achat']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Login Admin Local: <?php echo $data['login_admin_local']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Login Admin Domaine: <?php echo $data['login_admin_boissy']; ?></label>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Login Utilisateur: <?php echo $data['user_login']; ?></label>
                 </div>
+                
                 <div class="control-group">
                     <label class="control-label">VPN: <?php echo $data['vpn']; ?></label>
                 </div>

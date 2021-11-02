@@ -1,34 +1,37 @@
-/* body {
+body {
     margin-top: 3px;
     margin-left: 3px;
 }
 
 h1 {
     text-align: center;
-} */
+}
 
-
-/* table,
+table,
 th,
 td {
-    margin-left: 3px;
     text-align: center;
-    border: 1px solid black;
-} */
+}
+
+thead,
+th {
+    background-color: darkgrey;
+}
 
 tr:nth-child(even) {
     background-color: #D6EEEE;
 }
 
-
-/* a.order_asc,
+a.order_asc,
 a.order_desc:hover {
     padding-right: 15px;
     background: transparent url(s_asc.png) right no-repeat;
+    color: red;
 }
 
 a.order_desc,
 a.order_asc:hover {
     padding-right: 15px;
     background: transparent url(s_desc.png) right no-repeat;
-} */
+    color: red;
+}

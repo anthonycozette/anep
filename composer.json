@@ -1,9 +1,0 @@
-{
-    "name": "acozette/projet",
-    "autoload": {
-        "psr-4": {
-            "Acozette\\Projet\\": "public/"
-        }
-    },
-    "require": {}
-}
