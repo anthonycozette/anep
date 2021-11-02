@@ -44,83 +44,83 @@ if (null == $id) {
             <div class="form-horizontal">
 
                 <div class="control-group">
-                    <label class="control-label">Nom Ordinateur: <?php echo $data['nom_ordinateur']; ?></label>
+                    <label class="control-label"> <strong>Nom Ordinateur:</strong> <?php echo $data['nom_ordinateur']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Nom utilisateur: <?php echo $data['nom_utilisateur']; ?></label>
+                    <label class="control-label"><strong>utilisateur:</strong> <?php echo $data['nom_utilisateur']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Prénom Utilisateur: <?php echo $data['prenom_utilisateur']; ?></label>
+                    <label class="control-label"><strong>Prénom Utilisateur:</strong> <?php echo $data['prenom_utilisateur']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Réf Qualité: <?php echo $data['ref_qualite']; ?></label>
+                    <label class="control-label"><strong>Réf Qualité:</strong> <?php echo $data['ref_qualite']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">En Production: <?php echo $data['production']; ?></label>
+                    <label class="control-label"><strong>En Production:</strong> <?php echo $data['production']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Emplacement:<?php echo $data['emplacement']; ?></label>
+                    <label class="control-label"><strong>Emplacement:</strong><?php echo $data['emplacement']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Nom du Service: <?php echo $data['services']; ?></label>
+                    <label class="control-label"><strong>Nom du Service:</strong> <?php echo $data['services']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Adresse IP: <?php echo $data['adresse_ip']; ?></label>
+                    <label class="control-label"><strong>Adresse IP:</strong> <?php echo $data['adresse_ip']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Référence: <?php echo $data['reference']; ?></label>
+                    <label class="control-label"><strong>Référence:</strong> <?php echo $data['reference']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Réseau LAN: <?php echo $data['lan_reseau']; ?></label>
+                    <label class="control-label"><strong>Réseau LAN:</strong> <?php echo $data['lan_reseau']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Type de Matériel: <?php echo $data['type_materiel']; ?></label>
+                    <label class="control-label"><strong>Type de Matériel:</strong> <?php echo $data['type_materiel']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">En Service: <?php echo $data['en_service']; ?></label>
+                    <label class="control-label"><strong>En Service:</strong> <?php echo $data['en_service']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Numero de Serie: <?php echo $data['numero_serie']; ?></label>
+                    <label class="control-label"><strong>Numero de Serie:</strong> <?php echo $data['numero_serie']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Systeme Exploitation: <?php echo $data['systeme_exploitation']; ?></label>
+                    <label class="control-label"><strong>Systeme Exploitation:</strong> <?php echo $data['systeme_exploitation']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Adresse Mac: <?php echo $data['mac_adresse']; ?></label>
+                    <label class="control-label"><strong>Adresse Mac:</strong> <?php echo $data['mac_adresse']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Date Achat: <?php echo $data['date_achat']; ?></label>
+                    <label class="control-label"><strong>Date Achat:</strong> <?php echo $data['date_achat']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Login Admin Local: <?php echo $data['login_admin_local']; ?></label>
+                    <label class="control-label"><strong>Login Admin Local:</strong> <?php echo $data['login_admin_local']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Login Admin Domaine: <?php echo $data['login_admin_boissy']; ?></label>
+                    <label class="control-label"><strong>Login Admin Domaine:</strong> <?php echo $data['login_admin_boissy']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">Login Utilisateur: <?php echo $data['user_login']; ?></label>
+                    <label class="control-label"><strong>Login Utilisateur:</strong> <?php echo $data['user_login']; ?></label>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label">VPN: <?php echo $data['vpn']; ?></label>
+                    <label class="control-label"><strong>VPN:</strong> <?php echo $data['vpn']; ?></label>
                 </div>
 
                 <div class="form-actions mt-3">
