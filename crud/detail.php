@@ -17,12 +17,6 @@ if (null == $id) {
     Database::disconnect();
 }
 
-
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +90,7 @@ if (null == $id) {
                 <div class="control-group">
                     <label class="control-label">En Service: <?php echo $data['en_service']; ?></label>
                 </div>
-                
+
                 <div class="control-group">
                     <label class="control-label">Numero de Serie: <?php echo $data['numero_serie']; ?></label>
                 </div>
@@ -124,7 +118,7 @@ if (null == $id) {
                 <div class="control-group">
                     <label class="control-label">Login Utilisateur: <?php echo $data['user_login']; ?></label>
                 </div>
-                
+
                 <div class="control-group">
                     <label class="control-label">VPN: <?php echo $data['vpn']; ?></label>
                 </div>

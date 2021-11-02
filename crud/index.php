@@ -39,7 +39,7 @@
                     //on se connecte à la base 
                     $sql = "SELECT * FROM information_pc ORDER BY {$order_by} {$order_dir}";
 
-                    // Notre fonction qui affiche les liens
+                    // Notre fonction qui affiche les liens de tri
                     function sort_link($text, $order = false)
                     {
                         global $order_by, $order_dir;
@@ -60,6 +60,7 @@
                         return $link;
                     }
                     ?>
+                    
                     <thead>
 
                         <th><?php echo sort_link('Nom ordinateur', 'nom_ordinateur') ?></th>

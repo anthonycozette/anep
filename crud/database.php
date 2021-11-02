@@ -1,4 +1,4 @@
-<?php class Database
+<?php class Database //connection a la base de donnée
 {
     private static $dbName = 'test1';
     private static $dbHost = 'localhost';
