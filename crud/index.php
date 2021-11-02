@@ -25,32 +25,63 @@
             <div class="table-responsive mt-3">
 
                 <table class="table table-hover table-bordered">
+                    <?php include 'database.php';
+                    //on inclut notre fichier de connection 
+                    $pdo = Database::connect();
 
+                    // Tri sur colonne
+                    $tri_autorises = array('nom_ordinateur', 'nom_utilisateur', 'prenom_utilisateur', 'adresse_ip');
+                    $order_by = in_array(isset($_GET['order']), $tri_autorises) ? $_GET['order'] : 'ID';
+
+                    // Sens du tri
+                    $order_dir = isset($_GET['inverse']) ? 'DESC' : 'ASC';
+
+                    //on se connecte à la base 
+                    $sql = "SELECT * FROM information_pc ORDER BY {$order_by} {$order_dir}";
+
+                    // Notre fonction qui affiche les liens
+                    function sort_link($text, $order = false)
+                    {
+                        global $order_by, $order_dir;
+
+                        if (!$order)
+                            $order = $text;
+
+                        $link = '<a href="?order=' . $order;
+                        if ($order_by == $order && $order_dir == 'ASC')
+                            $link .= '&inverse=true';
+                        $link .= '"';
+                        if ($order_by == $order && $order_dir == 'ASC')
+                            $link .= ' class="order_asc"';
+                        elseif ($order_by == $order && $order_dir == 'DESC')
+                            $link .= ' class="order_desc"';
+                        $link .= '>' . $text . '</a>';
+
+                        return $link;
+                    }
+                    ?>
                     <thead>
 
-                        <th>Nom ordinateur</th>
-                        <th>Nom utilisateur</th>
-                        <th>Prénom utilisateur</th>
-                        <th>Emplacement</th>
-                        <th>Production</th>
-                        <th>En service</th>
-                        <th>Type de Materiel</th>
-                        <th>Date achat</th>
-                        <th>service</th>
-                        <th>Adresse ip</th>
+                        <th><?php echo sort_link('Nom ordinateur', 'nom_ordinateur') ?></th>
+                        <th><?php echo sort_link('Nom utilisateur', 'nom_utilisateur') ?></th>
+                        <th><?php echo sort_link('Prénom utilisateur', 'prenom_utilisateur') ?></th>
+                        <th><?php echo sort_link('Emplacement', 'emplacement') ?></th>
+                        <th><?php echo sort_link('Production', 'production') ?></th>
+                        <th><?php echo sort_link('En service', 'en_service') ?></th>
+                        <th><?php echo sort_link('Type de Materiel', 'type_materiel') ?></th>
+                        <th><?php echo sort_link('Date achat', 'date_achat') ?></th>
+                        <th><?php echo sort_link('service', 'services') ?></th>
+                        <th><?php echo sort_link('Adresse ip', 'adresse_ip') ?></th>
 
                     </thead>
 
                     <tbody>
-                        <?php include 'database.php';
-                        //on inclut notre fichier de connection 
-                        $pdo = Database::connect();
-                        //on se connecte à la base 
-                        $sql = 'SELECT * FROM information_pc ORDER BY ID DESC';
+                        <?php
+
                         //on formule notre requete 
                         foreach ($pdo->query($sql) as $row) {
-                            //on cree les lignes du tableau avec chaque valeur retournée
 
+                            //on cree les lignes du tableau avec chaque valeur retournée
                             echo '<tr>';
                             echo '<td>' . $row['nom_ordinateur'] . '</td>';
                             echo '<td>' . $row['nom_utilisateur'] . '</td>';
@@ -75,6 +106,7 @@
                         }
                         Database::disconnect(); //on se deconnecte de la base
                         ;
+
                         ?>
                     </tbody>
 
