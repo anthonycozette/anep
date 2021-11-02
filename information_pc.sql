@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `information_pc` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `nom_ordinateur` varchar(255) NOT NULL,
   `nom_utilisateur` varchar(255) NOT NULL,
-  `prenom_utlisateur` varchar(255) NOT NULL,
+  `prenom_utilisateur` varchar(255) NOT NULL,
   `ref_qualite` varchar(255) NOT NULL,
   `production` varchar(255) NOT NULL,
   `emplacement` varchar(255) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `information_pc` (
 -- Déchargement des données de la table `information_pc`
 --
 
-INSERT INTO `information_pc` (`ID`, `nom_ordinateur`, `nom_utilisateur`, `prenom_utlisateur`, `ref_qualite`, `production`, `emplacement`, `services`, `adresse_ip`, `reference`, `lan_reseau`, `type_materiel`, `en_service`, `numero_serie`, `systeme_exploitation`, `mac_adresse`, `date_achat`, `login_admin_local`, `pwd_admin_local`, `login_admin_boissy`, `pwd_admin_boissy`, `user_login`, `user_pwd`, `vpn`) VALUES
+INSERT INTO `information_pc` (`ID`, `nom_ordinateur`, `nom_utilisateur`, `prenom_utilisateur`, `ref_qualite`, `production`, `emplacement`, `services`, `adresse_ip`, `reference`, `lan_reseau`, `type_materiel`, `en_service`, `numero_serie`, `systeme_exploitation`, `mac_adresse`, `date_achat`, `login_admin_local`, `pwd_admin_local`, `login_admin_boissy`, `pwd_admin_boissy`, `user_login`, `user_pwd`, `vpn`) VALUES
 (1, 'ANEP-BEI-12', 'cozette', 'anthony', 'a', 'oui', 'BEI', 'informatique', '192.168.1.134\r\n', 'HP PRO Desk 400 G7 Small Form', 'ANEP', 'ordinateur', 'oui', 'CZC1288MYF', 'Windows 10', '', '2021-10-01', 'admin', 'golden', 'admincampos', 'romain', 'acozette', 'Cocobico13/08', 'non'),
 (2, 'ANEP-BEI-12', 'cozette', 'anthony', 'a', 'oui', 'BEI', 'informatique', '192.168.1.134\r\n', 'HP PRO Desk 400 G7 Small Form', 'ANEP', 'ordinateur', 'oui', 'CZC1288MYF', 'Windows 10', '', '2021-10-01', 'admin', 'golden', 'admincampos', 'romain', 'acozette', 'Cocobico13/08', 'non'),
 (3, 'ss', 'anthony', 'cozette', 'ss', 'ss', 'ss', 'ss', 'ss', 'sss', 'ss', 'ss', 'ss', 'ss', 'ss', 'ss', '2021-10-27', 'ss', 'ss', 'ss', 'ss', 'ssss', 'ffff', 'ss'),
