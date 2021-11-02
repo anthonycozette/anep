@@ -18,7 +18,7 @@
             <h2>Liste des ordinateurs</h2>
         </div>
 
-        <div class="row">
+        <div class="row" id="bordure">
 
             <a href="add.php" class="btn btn-success col-2">Ajouter un ordinateur</a>
 

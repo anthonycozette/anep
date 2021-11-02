@@ -1,6 +1,6 @@
-body {
-    margin-top: 3px;
-    margin-left: 3px;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 h1,
@@ -37,4 +37,9 @@ a.order_asc:hover {
     padding-right: 15px;
     background: transparent url(s_desc.png) right no-repeat;
     color: red;
+}
+
+.row>*,
+#bordure {
+    padding-left: 0;
 }
