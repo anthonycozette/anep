@@ -21,10 +21,12 @@ class utilisateur
             die($e->getMessage());
         }
     }
+
     public function SetNomTable($nom_table)    //Attribue un nom de table pour la fonction generateTab()
     {
         $this->_nom_table = $nom_table;
     }
+
     public function generateTab()    //Affiche le tableau, selon le nom de la table et le nom des colonnes spécifiées lors de l'appel de la fonction
     {
         //La fonction n'a pas de paramètres, car le nombre de paramètres est variable, chaque tableau n'a pas le même nombre de colonnes.
@@ -45,6 +47,7 @@ class utilisateur
 		</th>';
         }
     }
+
     public function filter($nom_colonne, $nom_table)    //Fetch in DB all the elements of a column that contain the word specified in the filter field
     {
         //$_GET['term'] is a global value, which designates any variable in the array $_GET
@@ -70,4 +73,6 @@ class utilisateur
 
         return $source = json_encode($array);    //We return the PHP array got in a JSON variable, because this value is used in a script
     }
+
+    
 }

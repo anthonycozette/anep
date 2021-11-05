@@ -1,3 +1,12 @@
+<?php
+// Initialiser la session
+session_start();
+// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+if (!isset($_SESSION["username"])) {
+    header("Location: ../registration/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,15 +16,20 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../styles/styles.css" rel="stylesheet">
+    <link href="../styles/style.css" rel="stylesheet">
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22js%2Fbootstrap.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
 </head>
 
 <body>
-
+    <div class="sucess">
+        <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
+        <h2>Liste des ordinateurs</h2>
+        <a class="btn btn-primary" href="../registration/logout.php">Déconnexion</a>
+    </div>
     <div class="container">
 
         <div class="row">
-            <h2>Liste des ordinateurs</h2>
+            
         </div>
 
         <div class="row" id="bordure">
@@ -60,7 +74,7 @@
                         return $link;
                     }
                     ?>
-                    
+
                     <thead>
 
                         <th><?php echo sort_link('Nom ordinateur', 'nom_ordinateur') ?></th>

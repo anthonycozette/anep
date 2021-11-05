@@ -16,11 +16,6 @@ td {
     text-align: center;
 }
 
-thead,
-th {
-    background-color: darkgrey;
-}
-
 tr:nth-child(even) {
     background-color: #D6EEEE;
 }
