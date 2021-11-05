@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="./styles/styles.css" rel="stylesheet">
+    <link href="../styles/styles.css" rel="stylesheet">
 
     <title>BIG EYE</title>
 </head>
@@ -51,7 +51,7 @@
         <div class="row mt-3" id="bordure">
             <!-- Bouton défiltré -->
             <form action="index.php"><button class="btn btn-primary" role="button" <?php echo $actif; ?>>Défiltrer</button></form>
-            <a href="./crud/add.php" class="btn btn-success col-2 mt-3">Ajouter un ordinateur</a>
+            <a href="../crud/add.php" class="btn btn-success col-2 mt-3">Ajouter un ordinateur</a>
 
             <div class="table-responsive mt-3">
                 <!-- Création du tableau -->
@@ -82,13 +82,13 @@
                             echo '<td>' . $row['services'] . '</td>';
                             echo '<td>' . $row['adresse_ip'] . '</td>';
                             echo '<td>';
-                            echo '<a class="btn btn-info" href="./crud/detail.php?id=' . $row['ID'] . '">Detail<a>'; // un autre td pour le bouton d'edition
+                            echo '<a class="btn btn-info" href="../crud/detail.php?id=' . $row['ID'] . '">Detail<a>'; // un autre td pour le bouton d'edition
                             echo '</td>';
                             echo '<td>';
-                            echo '<a class="btn btn-success" href="./crud/update.php?id=' . $row['ID'] . '">Update</a>'; // un autre td pour le bouton d'update
+                            echo '<a class="btn btn-success" href="../crud/update.php?id=' . $row['ID'] . '">Update</a>'; // un autre td pour le bouton d'update
                             echo '</td>';
                             echo '<td>';
-                            echo '<a class="btn btn-danger" href="./crud/delete.php?id=' . $row['ID'] . ' ">Delete</a>'; // un autre td pour le bouton de suppression
+                            echo '<a class="btn btn-danger" href="../crud/delete.php?id=' . $row['ID'] . ' ">Delete</a>'; // un autre td pour le bouton de suppression
                             echo '</td>';
                             echo '</tr>';
                         ?>
