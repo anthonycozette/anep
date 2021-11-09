@@ -3,7 +3,7 @@ require 'database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
     //on initialise nos messages d'erreurs; 
-    $nnomOrdinateurError = '';
+    $nomOrdinateurError = '';
     $nomUtilisateurError = '';
     $prenomUtilisateurError = '';
     $refQualiteError = '';
@@ -193,14 +193,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                 <div class="col-3">
                     <div class="form-group<?php echo !empty($nomUtilisateurError) ? 'error' : ''; ?>">
                         <label class="form-label">Nom Utilisateur</label>
-
                         <div>
                             <input class="form-control" type="text" name="nomUtilisateur" placeholder="Nom Utilisateur" value="<?php echo !empty($nomUtilisateur) ? $nomUtilisateur : ''; ?>">
                             <?php if (!empty($nomUtilisateurError)) : ?>
                                 <span class="help-inline"><?php echo $nomUtilisateurError; ?></span>
                             <?php endif; ?>
                         </div>
-
                     </div>
                 </div>
 
@@ -220,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($loginUserError) ? 'error' : ''; ?>">
-                        <label class="control-label">Login Utilisateur</label>
+                        <label class="form-label">Login Utilisateur</label>
 
                         <div>
                             <input class="form-control" name="loginUser" type="text" placeholder="Login Utilisateur" value="<?php echo !empty($loginUser) ? $loginUser : ''; ?>">
@@ -234,10 +232,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($passwordUserError) ? 'error' : ''; ?>">
-                        <label class="control-label">Password Utilisateur</label>
+                        <label class="form-label">Password Utilisateur</label>
 
                         <div>
-                            <input class="form-control" name="passwordUser" type="password" placeholder=Password Utilisateur" value="<?php echo !empty($passwordUser) ? $passwordUser : ''; ?>">
+                            <input class="form-control" name="passwordUser" type="password" placeholder="Password Utilisateur" value="<?php echo !empty($passwordUser) ? $passwordUser : ''; ?>">
                             <?php if (!empty($passwordUserError)) : ?>
                                 <span class="help-inline"><?php echo $passwordUserError; ?></span>
                             <?php endif; ?>
@@ -252,7 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <h3>Info Ordinateur</h3>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($nomOrdinateurError) ? 'error' : ''; ?>">
                         <label class="form-label">Nom Ordinateur</label>
 
@@ -266,9 +264,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($referenceError) ? 'error' : ''; ?>">
-                        <label class="control-label">Référence</label>
+                        <label class="form-label">Référence</label>
 
                         <div>
                             <input class="form-control" name="reference" type="text" placeholder="Référence" value="<?php echo !empty($reference) ? $reference : ''; ?>">
@@ -280,9 +278,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($typeMaterielError) ? 'error' : ''; ?>">
-                        <label class="control-label">Type de Matériel</label>
+                        <label class="form-label">Type de Matériel</label>
 
                         <div>
                             <input class="form-control" name="typeMateriel" type="text" placeholder="Type de Matériel" value="<?php echo !empty($typeMateriel) ? $typeMateriel : ''; ?>">
@@ -294,9 +292,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($numeroSerieError) ? 'error' : ''; ?>">
-                        <label class="control-label">Numéro de Serie</label>
+                        <label class="form-label">Numéro de Serie</label>
 
                         <div>
                             <input class="form-control" name="numeroSerie" type="text" placeholder="Numéro de Serie" value="<?php echo !empty($numeroSerie) ? $numeroSerie : ''; ?>">
@@ -308,9 +306,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($systemeExploitationError) ? 'error' : ''; ?>">
-                        <label class="control-label">Systeme Exploitation</label>
+                        <label class="form-label">Systeme Exploitation</label>
 
                         <div>
                             <input class="form-control" name="systemeExploitation" type="text" placeholder="Systeme Exploitation" value="<?php echo !empty($systemeExploitation) ? $systemeExploitation : ''; ?>">
@@ -322,9 +320,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($dateAchatError) ? 'error' : ''; ?>">
-                        <label class="control-label">Date Achat</label>
+                        <label class="form-label">Date Achat</label>
 
                         <div>
                             <input class="form-control" name="dateAchat" type="date" placeholder="Date Achat" value="<?php echo !empty($dateAchat) ? $dateAchat : ''; ?>">
@@ -343,9 +341,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <h3>Info Service</h3>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($enServiceError) ? 'error' : ''; ?>">
-                        <label class="control-label">En Service</label>
+                        <label class="form-label">En Service</label>
 
                         <div>
                             <input class="form-control" name="enService" type="text" placeholder="En Service" value="<?php echo !empty($enService) ? $enService : ''; ?>">
@@ -357,7 +355,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($emplacementError) ? 'error' : ''; ?>">
                         <label class="form-label">Emplacement</label>
 
@@ -371,7 +369,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($servicesError) ? 'error' : ''; ?>">
                         <label class="form-label">Nom du Service</label>
 
@@ -385,7 +383,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($productionlError) ? 'error' : ''; ?>">
                         <label class="form-label">En Production</label>
 
@@ -399,7 +397,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($refQualiteError) ? 'error' : ''; ?>">
                         <label class="form-label">Ref Qualité</label>
 
@@ -413,9 +411,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($reseauLanError) ? 'error' : ''; ?>">
-                        <label class="control-label">Réseau LAN</label>
+                        <label class="form-label">Réseau LAN</label>
 
                         <div>
                             <input class="form-control" name="reseauLan" type="text" placeholder="Réseau LAN" value="<?php echo !empty($reseauLan) ? $reseauLan : ''; ?>">
@@ -435,7 +433,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($adresseIpError) ? 'error' : ''; ?>">
-                        <label class="control-label">Adresse IP</label>
+                        <label class="form-label">Adresse IP</label>
 
                         <div>
                             <input class="form-control" name="adresseIp" type="text" placeholder="Adresse IP" value="<?php echo !empty($adresseIp) ? $adresseIp : ''; ?>">
@@ -448,7 +446,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                 </div>
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($adresseMacError) ? 'error' : ''; ?>">
-                        <label class="control-label">Adresse mac</label>
+                        <label class="form-label">Adresse mac</label>
 
                         <div>
                             <input class="form-control" name="adresseMac" type="text" placeholder="Adresse mac" value="<?php echo !empty($adresseMac) ? $adresseMac : ''; ?>">
@@ -462,7 +460,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($loginAdminLocalError) ? 'error' : ''; ?>">
-                        <label class="control-label">Login Admin Local</label>
+                        <label class="form-label">Login Admin Local</label>
 
                         <div>
                             <input class="form-control" name="loginAdminLocal" type="text" placeholder="Login Admin Local" value="<?php echo !empty($loginAdminLocal) ? $loginAdminLocal : ''; ?>">
@@ -476,7 +474,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($pwdAdminLocalError) ? 'error' : ''; ?>">
-                        <label class="control-label">Password Admin Local</label>
+                        <label class="form-label">Password Admin Local</label>
 
                         <div>
                             <input class="form-control" name="pwdAdminLocal" type="password" placeholder="Password Admin Local" value="<?php echo !empty($pwdAdminLocal) ? $pwdAdminLocal : ''; ?>">
@@ -490,7 +488,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($loginAdminDomaineError) ? 'error' : ''; ?>">
-                        <label class="control-label">Login Admin Domaine</label>
+                        <label class="form-label">Login Admin Domaine</label>
 
                         <div>
                             <input class="form-control" name="loginAdminDomaine" type="text" placeholder="Login Admin Domaine" value="<?php echo !empty($loginAdminDomaine) ? $loginAdminDomaine : ''; ?>">
@@ -504,7 +502,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($pwdAdminDomaineError) ? 'error' : ''; ?>">
-                        <label class="control-label">Password Admin Domaine</label>
+                        <label class="form-label">Password Admin Domaine</label>
 
                         <div>
                             <input class="form-control" name="pwdAdminDomaine" type="password" placeholder="Password Admin Domaine" value="<?php echo !empty($pwdAdminDomaine) ? $pwdAdminDomaine : ''; ?>">
@@ -518,7 +516,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <div class="col-3">
                     <div class="form-group  <?php echo !empty($vpnError) ? 'error' : ''; ?>">
-                        <label class="control-label">VPN</label>
+                        <label class="form-label">VPN</label>
 
                         <div>
                             <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>">

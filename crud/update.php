@@ -10,7 +10,7 @@ if (null == $id) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
     // on initialise nos erreurs
-    $nnomOrdinateurError = null;
+    $nomOrdinateurError = null;
     $nomUtilisateurError = null;
     $prenomUtilisateurError = null;
     $refQualiteError = null;
@@ -158,10 +158,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $sql = "UPDATE information_pc SET nomOrdinateur = ?,nomUtilisateur = ?,prenomUtilisateur = ?,refQualite = ?, enProduction = ?, emplacement = ?, nomService = ?, adresseIp = ?, reference = ?,reseauLan = ?,typeMateriel = ?,enService = ?,numeroSerie = ?,systemeExploitation = ?,adresseMac = ?,dateAchat = ?,loginAdminLocal = ?,pwdAdminLocal = ?,loginAdminDomaine = ?,pwdAdminDomaine = ?,loginUser = ?,passwordUser = ?,vpn = ?, WHERE id = ?";
+        $sql = "UPDATE `information_pc` SET `nom_ordinateur`=?,`nom_utilisateur`=?,`prenom_utilisateur`=?,`ref_qualite`=?,`production`=?,`emplacement`=?,`services`=?,`adresse_ip`=?,`reference`=?,`lan_reseau`=?,`type_materiel`=?,`en_service`=?,`numero_serie`=?,`systeme_exploitation`=?,`mac_adresse`=?,`date_achat`=?,`login_admin_local`=?,`pwd_admin_local`=?,`login_admin_boissy`=?,`pwd_admin_boissy`=?,`user_login`=?,`user_pwd`=?,`vpn`=? WHERE `id`=?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $production, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn));
+        $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $production, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn, $id));
+        // $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $production, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn, $id));
         Database::disconnect();
         header("Location: index.php");
     }
@@ -169,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM information_pc where id = ?";
+    $sql = "SELECT * FROM information_pc where ID = ?";
     $q = $pdo->prepare($sql);
     $q->execute(array($id));
     $data = $q->fetch(PDO::FETCH_ASSOC);
@@ -221,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
         </div>
 
-        <form method="post" action="add.php">
+        <form method="post" action="update.php?id=<?php echo $id; ?>">
 
             <div class="row mt-3">
 
@@ -274,7 +274,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                         <label class="control-label">Password Utilisateur</label>
 
                         <div>
-                            <input class="form-control" name="passwordUser" type="password" placeholder=Password Utilisateur" value="<?php echo !empty($passwordUser) ? $passwordUser : ''; ?>">
+                            <input class="form-control" name="passwordUser" type="password" placeholder="Password Utilisateur" value="<?php echo !empty($passwordUser) ? $passwordUser : ''; ?>">
                             <?php if (!empty($passwordUserError)) : ?>
                                 <span class="help-inline"><?php echo $passwordUserError; ?></span>
                             <?php endif; ?>
