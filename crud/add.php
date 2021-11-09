@@ -1,4 +1,13 @@
 <?php
+
+// Initialiser la session
+session_start();
+// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+if (!isset($_SESSION["username"])) {
+    header("Location: ../registration/login.php");
+    exit();
+}
+
 require 'database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 

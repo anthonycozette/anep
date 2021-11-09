@@ -1,4 +1,13 @@
-<?php require('database.php');
+<?php
+// Initialiser la session
+session_start();
+// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+if (!isset($_SESSION["username"])) {
+    header("Location: ../registration/login.php");
+    exit();
+}
+
+require('database.php');
 //on appelle notre fichier de config 
 $id = null;
 if (!empty($_GET['id'])) {
