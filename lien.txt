@@ -1,3 +1,0 @@
-https://www.copier-coller.com/un-crud-avec-espace-de-connexion-en-php/
-http://tspro.fr/Tuto/tuto-creation-tableau-filtre-autocompletion-php/
-https://www.developpez.net/forums/d1928530/javascript/bibliotheques-frameworks/jquery/tableau-cocher-checkbox-filtre/
