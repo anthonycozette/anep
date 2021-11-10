@@ -514,7 +514,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                         <label class="form-label">VPN</label>
 
                         <div>
-                            <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>">
+                            <!-- <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>"> -->
+                            <select class="form-select" id="vpn" name="vpn">
+                                
+                                <option value="oui">oui</option>
+                                <option value="non">non</option>
+                            </select>
                             <?php if (!empty($vpnError)) : ?>
                                 <span class="help-inline"><?php echo $vpnError; ?></span>
                             <?php endif; ?>

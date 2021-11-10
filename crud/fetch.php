@@ -2,7 +2,7 @@
 
 //fetch.php
 
-include('../database.php');
+include('../database/database.php');
 $connect = Database::connect();
 // $column = array('CustomerName', 'Gender', 'Address', 'City', 'PostalCode', 'Country');
 $column = array('nom_ordinateur', 'nom_utilisateur', 'prenom_utilisateur', 'emplacement', 'production', 'en_service', 'type_materiel', 'services', 'adresse_ip');
