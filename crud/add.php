@@ -8,7 +8,7 @@ if (!isset($_SESSION["username"])) {
     exit();
 }
 
-require 'database.php';
+require '../database/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
     //on initialise nos messages d'erreurs; 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     $nomUtilisateur = htmlentities(trim($_POST['nomUtilisateur']));
     $prenomUtilisateur = htmlentities(trim($_POST['prenomUtilisateur']));
     $refQualite = htmlentities(trim($_POST['refQualite']));
-    $production = htmlentities(trim($_POST['enProduction']));
+    // $production = htmlentities(trim($_POST['enProduction']));
     $emplacement = htmlentities(trim($_POST['emplacement']));
     $services = htmlentities(trim($_POST['nomService']));
     $adresseIp = htmlentities(trim($_POST['adresseIp']));
@@ -75,14 +75,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
         $prenomUtilisateurError = 'prénom utilisateur';
         $valid = false;
     }
-    if (empty($refQualite)) {
-        $refQualiteError = 'Reference qualité';
-        $valid = true;
-    }
-    if (empty($production)) {
-        $productionError = 'En production';
-        $valid = false;
-    }
+    // if (empty($refQualite)) {
+    //     $refQualiteError = 'Reference qualité';
+    //     $valid = true;
+    // }
+    // if (empty($production)) {
+    //     $productionError = 'En production';
+    //     $valid = false;
+    // }
     if (!isset($emplacement)) {
         $emplacementError = 'Emplacement';
         $valid = false;
@@ -115,10 +115,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
         $numeroSerieError = 'Numero de serie';
         $valid = false;
     }
-    if (empty($systemeExploitation)) {
-        $systemeExploitationError = 'Systeme exploitation';
-        $valid = false;
-    }
+    // if (empty($systemeExploitation)) {
+    //     $systemeExploitationError = 'Systeme exploitation';
+    //     $valid = false;
+    // }
     if (empty($adresseMac)) {
         $adresseMacError = 'adresse mac';
         $valid = false;
@@ -160,9 +160,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO information_pc (ID, nom_ordinateur, nom_utilisateur, prenom_utilisateur, ref_qualite, production, emplacement, services, adresse_ip, reference, lan_reseau, type_materiel, en_service, numero_serie, systeme_exploitation, mac_adresse, date_achat, login_admin_local, pwd_admin_local, login_admin_boissy, pwd_admin_boissy,user_login, user_pwd, vpn) VALUES (NULL, '" . $_POST['nomOrdinateur'] . "', '" . $_POST['nomUtilisateur'] . "', '" . $_POST['prenomUtilisateur'] . "', '" . $_POST['refQualite'] . "', '" . $_POST['enProduction'] . "', '" . $_POST['emplacement'] . "', '" . $_POST['nomService'] . "','" . $_POST['adresseIp'] . "','" . $_POST['reference'] . "','" . $_POST['reseauLan'] . "','" . $_POST['typeMateriel'] . "','" . $_POST['enService'] . "','" . $_POST['numeroSerie'] . "','" . $_POST['systemeExploitation'] . "','" . $_POST['adresseMac'] . "','" . $_POST['dateAchat'] . "','" . $_POST['loginAdminLocal'] . "','" . $_POST['pwdAdminLocal'] . "','" . $_POST['loginAdminDomaine'] . "','" . $_POST['pwdAdminDomaine'] . "','" . $_POST['loginUser'] . "','" . $_POST['passwordUser'] . "','" . $_POST['vpn'] . "')";
+        $sql = "INSERT INTO information_pc (ID, nom_ordinateur, nom_utilisateur, prenom_utilisateur, ref_qualite, emplacement, services, adresse_ip, reference, lan_reseau, type_materiel, en_service, numero_serie, systeme_exploitation, mac_adresse, date_achat, login_admin_local, pwd_admin_local, login_admin_boissy, pwd_admin_boissy,user_login, user_pwd, vpn) VALUES (NULL, '" . $_POST['nomOrdinateur'] . "', '" . $_POST['nomUtilisateur'] . "', '" . $_POST['prenomUtilisateur'] . "', '" . $_POST['refQualite'] . "', '" . $_POST['emplacement'] . "', '" . $_POST['nomService'] . "','" . $_POST['adresseIp'] . "','" . $_POST['reference'] . "','" . $_POST['reseauLan'] . "','" . $_POST['typeMateriel'] . "','" . $_POST['enService'] . "','" . $_POST['numeroSerie'] . "','" . $_POST['systemeExploitation'] . "','" . $_POST['adresseMac'] . "','" . $_POST['dateAchat'] . "','" . $_POST['loginAdminLocal'] . "','" . $_POST['pwdAdminLocal'] . "','" . $_POST['loginAdminDomaine'] . "','" . $_POST['pwdAdminDomaine'] . "','" . $_POST['loginUser'] . "','" . $_POST['passwordUser'] . "','" . $_POST['vpn'] . "')";
         $q = $pdo->prepare($sql);
-        $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $production, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn));
+        $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn));
         Database::disconnect();
         header("Location: index.php");
     }
@@ -386,20 +386,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                             <input class="form-control" name="nomService" type="text" placeholder="Nom du Service" value="<?php echo !empty($services) ? $services : ''; ?>">
                             <?php if (!empty($servicesError)) : ?>
                                 <span class="help-inline"><?php echo $servicesError; ?></span>
-                            <?php endif; ?>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="form-group <?php echo !empty($productionlError) ? 'error' : ''; ?>">
-                        <label class="form-label">En Production</label>
-
-                        <div>
-                            <input class="form-control" name="enProduction" type="text" placeholder="En Production" value="<?php echo !empty($production) ? $production : ''; ?>">
-                            <?php if (!empty($productionlError)) : ?>
-                                <span class="help-inline"><?php echo $productionlError; ?></span>
                             <?php endif; ?>
                         </div>
 

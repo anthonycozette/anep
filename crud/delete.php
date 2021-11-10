@@ -7,7 +7,7 @@ if (!isset($_SESSION["username"])) {
     exit();
 }
 
-require 'database.php';
+require '../database/database.php';
 $id = 0;
 if (!empty($_GET['id'])) {
     $id = $_REQUEST['id'];

@@ -7,7 +7,7 @@ if (!isset($_SESSION["username"])) {
     exit();
 }
 
-require 'database.php';
+require '../database/database.php';
 $id = null;
 if (!empty($_GET['id'])) {
     $id = $_REQUEST['id'];
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     $nomUtilisateurError = null;
     $prenomUtilisateurError = null;
     $refQualiteError = null;
-    $productionlError = null;
+    // $productionlError = null;
     $emplacementError = null;
     $servicesError = null;
     $adresseIpError = null;
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     $nomUtilisateur = $_POST['nomUtilisateur'];
     $prenomUtilisateur = $_POST['prenomUtilisateur'];
     $refQualite = $_POST['refQualite'];
-    $production = $_POST['enProduction'];
+    // $production = $_POST['enProduction'];
     $emplacement = $_POST['emplacement'];
     $services = $_POST['nomService'];
     $adresseIp = $_POST['adresseIp'];
@@ -81,14 +81,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
         $prenomUtilisateurError = 'prénom utilisateur';
         $valid = false;
     }
-    if (empty($refQualite)) {
-        $refQualiteError = 'Reference qualité';
-        $valid = true;
-    }
-    if (empty($production)) {
-        $productionError = 'En production';
-        $valid = false;
-    }
+    // if (empty($refQualite)) {
+    //     $refQualiteError = 'Reference qualité';
+    //     $valid = true;
+    // }
+    // if (empty($production)) {
+    //     $productionError = 'En production';
+    //     $valid = false;
+    // }
     if (!isset($emplacement)) {
         $emplacementError = 'Emplacement';
         $valid = false;
@@ -121,10 +121,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
         $numeroSerieError = 'Numero de serie';
         $valid = false;
     }
-    if (empty($systemeExploitation)) {
-        $systemeExploitationError = 'Systeme exploitation';
-        $valid = false;
-    }
+    // if (empty($systemeExploitation)) {
+    //     $systemeExploitationError = 'Systeme exploitation';
+    //     $valid = false;
+    // }
     if (empty($adresseMac)) {
         $adresseMacError = 'adresse mac';
         $valid = false;
@@ -166,9 +166,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE `information_pc` SET `nom_ordinateur`=?,`nom_utilisateur`=?,`prenom_utilisateur`=?,`ref_qualite`=?,`production`=?,`emplacement`=?,`services`=?,`adresse_ip`=?,`reference`=?,`lan_reseau`=?,`type_materiel`=?,`en_service`=?,`numero_serie`=?,`systeme_exploitation`=?,`mac_adresse`=?,`date_achat`=?,`login_admin_local`=?,`pwd_admin_local`=?,`login_admin_boissy`=?,`pwd_admin_boissy`=?,`user_login`=?,`user_pwd`=?,`vpn`=? WHERE `id`=?";
+        $sql = "UPDATE `information_pc` SET `nom_ordinateur`=?,`nom_utilisateur`=?,`prenom_utilisateur`=?,`ref_qualite`=?,`emplacement`=?,`services`=?,`adresse_ip`=?,`reference`=?,`lan_reseau`=?,`type_materiel`=?,`en_service`=?,`numero_serie`=?,`systeme_exploitation`=?,`mac_adresse`=?,`date_achat`=?,`login_admin_local`=?,`pwd_admin_local`=?,`login_admin_boissy`=?,`pwd_admin_boissy`=?,`user_login`=?,`user_pwd`=?,`vpn`=? WHERE `id`=?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $production, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn, $id));
+        $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn, $id));
         // $q->execute(array($nomOrdinateur, $nomUtilisateur, $prenomUtilisateur, $refQualite, $production, $emplacement, $services, $adresseIp, $reference, $reseauLan, $typeMateriel, $enService, $numeroSerie, $systemeExploitation, $adresseMac, $dateAchat, $loginAdminLocal, $pwdAdminLocal, $loginAdminDomaine, $pwdAdminDomaine, $loginUser, $passwordUser, $vpn, $id));
         Database::disconnect();
         header("Location: index.php");
@@ -185,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     $nomUtilisateur = $data['nom_utilisateur'];
     $prenomUtilisateur = $data['prenom_utilisateur'];
     $refQualite = $data['ref_qualite'];
-    $production = $data['production'];
+    // $production = $data['production'];
     $emplacement = $data['emplacement'];
     $services = $data['services'];
     $adresseIp = $data['adresse_ip'];
@@ -297,7 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <h3>Info Ordinateur</h3>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($nomOrdinateurError) ? 'error' : ''; ?>">
                         <label class="form-label">Nom Ordinateur</label>
 
@@ -311,7 +311,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($referenceError) ? 'error' : ''; ?>">
                         <label class="control-label">Référence</label>
 
@@ -325,7 +325,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($typeMaterielError) ? 'error' : ''; ?>">
                         <label class="control-label">Type de Matériel</label>
 
@@ -339,7 +339,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($numeroSerieError) ? 'error' : ''; ?>">
                         <label class="control-label">Numéro de Serie</label>
 
@@ -353,7 +353,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($systemeExploitationError) ? 'error' : ''; ?>">
                         <label class="control-label">Systeme Exploitation</label>
 
@@ -367,7 +367,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($dateAchatError) ? 'error' : ''; ?>">
                         <label class="control-label">Date Achat</label>
 
@@ -388,7 +388,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                 <h3>Info Service</h3>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($enServiceError) ? 'error' : ''; ?>">
                         <label class="control-label">En Service</label>
 
@@ -402,7 +402,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($emplacementError) ? 'error' : ''; ?>">
                         <label class="form-label">Emplacement</label>
 
@@ -416,7 +416,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($servicesError) ? 'error' : ''; ?>">
                         <label class="form-label">Nom du Service</label>
 
@@ -430,21 +430,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
-                    <div class="form-group <?php echo !empty($productionlError) ? 'error' : ''; ?>">
-                        <label class="form-label">En Production</label>
-
-                        <div>
-                            <input class="form-control" name="enProduction" type="text" placeholder="En Production" value="<?php echo !empty($production) ? $production : ''; ?>">
-                            <?php if (!empty($productionlError)) : ?>
-                                <span class="help-inline"><?php echo $productionlError; ?></span>
-                            <?php endif; ?>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group <?php echo !empty($refQualiteError) ? 'error' : ''; ?>">
                         <label class="form-label">Ref Qualité</label>
 
@@ -458,7 +444,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                     </div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group  <?php echo !empty($reseauLanError) ? 'error' : ''; ?>">
                         <label class="control-label">Réseau LAN</label>
 

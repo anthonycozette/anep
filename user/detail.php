@@ -133,7 +133,7 @@ if (null == $id) {
                 </div>
 
                 <div class="form-actions mt-3">
-                    <a class="btn btn-dark" href="index.php">Retour </a>
+                    <a class="btn btn-dark" href="../index.php">Retour </a>
                 </div>
 
             </div>

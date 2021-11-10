@@ -2,7 +2,7 @@
 
 //fetch.php
 
-include('../database.php');
+include('../database/database.php');
 $connect = Database::connect();
 // $column = array('CustomerName', 'Gender', 'Address', 'City', 'PostalCode', 'Country');
 $column = array('nom_ordinateur', 'nom_utilisateur', 'prenom_utilisateur', 'emplacement', 'production', 'en_service', 'type_materiel', 'services', 'adresse_ip');
@@ -61,9 +61,7 @@ foreach ($result as $row) {
     $sub_array[] = $row['type_materiel'];
     $sub_array[] = $row['services'];
     $sub_array[] = $row['adresse_ip'];
-    $sub_array[] = '<a class="btn btn-info" href="detail.php?id=' . $row['ID'] . '">Detail<a>';
-    $sub_array[] = '<a class="btn btn-success" href="update.php?id=' . $row['ID'] . '">Update</a>';
-    $sub_array[] = '<a class="btn btn-danger" href="delete.php?id=' . $row['ID'] . ' ">Delete</a>';
+    $sub_array[] = '<a class="btn btn-info" href="./user/detail.php?id=' . $row['ID'] . '">Detail<a>';
     $data[] = $sub_array;
 }
 
