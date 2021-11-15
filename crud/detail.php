@@ -46,7 +46,7 @@ if (null == $id) {
 
             <div class="row">
 
-                <h3>Detail</h3>
+                <h3>Detail de l'equipement</h3>
 
             </div>
 
@@ -68,9 +68,9 @@ if (null == $id) {
                     <label class="control-label"><strong>Réf Qualité:</strong> <?php echo $data['ref_qualite']; ?></label>
                 </div>
 
-                <div class="control-group">
+                <!-- <div class="control-group">
                     <label class="control-label"><strong>En Production:</strong> <?php echo $data['production']; ?></label>
-                </div>
+                </div> -->
 
                 <div class="control-group">
                     <label class="control-label"><strong>Emplacement:</strong><?php echo $data['emplacement']; ?></label>

@@ -25,7 +25,7 @@ if (!isset($_SESSION["username"])) {
 <body>
     <div class="sucess">
         <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
-        <h2>Liste des equipements</h2>
+        <h2>Liste des Equipements</h2>
         <a class="btn btn-primary" href="../registration/logout.php">Déconnexion</a>
     </div>
     <div class="container">
@@ -36,7 +36,7 @@ if (!isset($_SESSION["username"])) {
 
         <div class="row" id="bordure">
 
-            <a href="add.php" class="btn btn-success col-2">Ajouter un equipement</a>
+            <a href="add.php" class="btn btn-success col-2">Ajouter un Equipement</a>
 
             <div class="table-responsive mt-3">
 

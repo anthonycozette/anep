@@ -38,3 +38,7 @@ a.order_asc:hover {
 #bordure {
     padding-left: 0;
 }
+
+span {
+    color: red;
+}

@@ -43,7 +43,7 @@ if (!empty($_POST)) {
 
             <div class="row">
 
-                <h2>Supprimer l'Ordinateur</h2>
+                <h2>Supprimer l'Equipement</h2>
 
             </div>
 
