@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
     //     $valid = false;
     // }
     if (empty($emplacement)) {
-        $emplacementError = 'prénom utilisateur obligatoire';
+        $emplacementError = 'Emplacement obligatoire';
         $valid = false;
     }
     if (empty($services)) {
@@ -194,11 +194,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
         </div>
 
-        <div class="row mb-3">
-            <h3>Information de l'Utilisateur du pc</h3>
-        </div>
-
         <form method="post" action="add.php">
+
+            <div class="row mb-3">
+                <h3>Information de l'Utilisateur du pc</h3>
+            </div>
 
             <div class="row mt-3">
 
@@ -219,14 +219,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                 <div class="col-3">
                     <div class="form-group<?php echo !empty($prenomUtilisateurError) ? 'error' : ''; ?>">
                         <label class="form-label">
-                            <h5>Prénom Utilisateur</h5></label>
+                            <h5>Prénom Utilisateur</h5>
+                        </label>
 
-                                <div>
-                                    <input class="form-control" type="text" name="prenomUtilisateur" placeholder="Prénom Utilisateur" value="<?php echo !empty($prenomUtilisateur) ? $prenomUtilisateur : ''; ?>">
-                                    <?php if (!empty($prenomUtilisateurError)) : ?>
-                                        <span class="help-inline text-danger"><?php echo $prenomUtilisateurError; ?></span>
-                                    <?php endif; ?>
-                                </div>
+                        <div>
+                            <input class="form-control" type="text" name="prenomUtilisateur" placeholder="Prénom Utilisateur" value="<?php echo !empty($prenomUtilisateur) ? $prenomUtilisateur : ''; ?>">
+                            <?php if (!empty($prenomUtilisateurError)) : ?>
+                                <span class="help-inline text-danger"><?php echo $prenomUtilisateurError; ?></span>
+                            <?php endif; ?>
+                        </div>
 
                     </div>
                 </div>
@@ -560,11 +561,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                         </label>
 
                         <div>
-                            <!-- <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>"> -->
-                            <select class="form-select" id="vpn" name="vpn">
+                            <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>">
+                            <!-- <select class="form-select" id="vpn" name="vpn">
                                 <option value="oui">oui</option>
                                 <option value="non">non</option>
-                            </select>
+                            </select> -->
                             <?php if (!empty($vpnError)) : ?>
                                 <span class="help-inline text-danger"><?php echo $vpnError; ?></span>
                             <?php endif; ?>
