@@ -411,7 +411,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                         </label>
 
                         <div>
-                            <input class="form-control" name="enService" type="text" placeholder="En Service" value="<?php echo !empty($enService) ? $enService : ''; ?>">
+                            <!-- <input class="form-control" name="enService" type="text" placeholder="En Service" value="<?php echo !empty($enService) ? $enService : ''; ?>"> -->
+                            <select class="form-select" name="enService">
+                                <option value="oui" <?= $enService == 'oui' ? ' selected="selected"' : ''; ?>>oui</option>
+                                <option value="oui" <?= $enService == 'non' ? ' selected="selected"' : ''; ?>>non</option>
+                            </select>
                             <?php if (!empty($enServiceError)) : ?>
                                 <span class="help-inline text-danger"><?php echo $enServiceError; ?></span>
                             <?php endif; ?>
@@ -435,22 +439,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                     </div>
                 </div>
-
-                <!-- <div class="col-3">
-    <div class="form-group <?php echo !empty($emplacementError) ? 'error' : ''; ?>">
-        <label class="form-label">
-            <h5>Emplacement</h5>
-        </label>
-
-        <div>
-            <input class="form-control" name="emplacement" type="text" placeholder="Emplacement" value="<?php echo !empty($emplacement) ? $emplacement : ''; ?>">
-            <?php if (!empty($emplacementError)) : ?>
-                <span class="help-inline text-danger"><?php echo $emplacementError; ?></span>
-            <?php endif; ?>
-        </div>
-
-    </div>
-</div> -->
 
                 <div class="col-3">
                     <div class="form-group <?php echo !empty($servicesError) ? 'error' : ''; ?>">
@@ -609,10 +597,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                         <div>
                             <!-- <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>"> -->
-                            <select class="form-select" id="vpn" name="vpn">
+                            <select class="form-select" name="vpn">
 
-                                <option value="oui">oui</option>
-                                <option value="non">non</option>
+                                <option value="oui" <?= $vpn == 'oui' ? ' selected="selected"' : ''; ?>>oui</option>
+                                <option value="oui" <?= $vpn == 'non' ? ' selected="selected"' : ''; ?>>non</option>
+
                             </select>
                             <?php if (!empty($vpnError)) : ?>
                                 <span class="help-inline text-danger"><?php echo $vpnError; ?></span>

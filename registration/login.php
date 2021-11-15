@@ -16,18 +16,51 @@
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($conn, $password);
         $query = "SELECT * FROM `users` WHERE username='$username' and password='" . hash('sha256', $password) . "'";
-        $result = mysqli_query($conn, $query) or die( mysqli_connect_error());
-        $rows = mysqli_num_rows($result);
-        if ($rows == 1) {
-            $_SESSION['username'] = $username;
-            header("Location: ../crud/index.php");
+        $result = mysqli_query($conn, $query) or die(mysqli_connect_error());
+        if (mysqli_num_rows($result) == 1) {
+            //Authentification OK, obtenir les infos
+            $data = mysqli_fetch_object($result);
+
+            //Compte actif ou pas?
+            if ($data->active == 1) {
+                //Variables de session
+                $_SESSION['username'] = $username;
+                $_SESSION['active'] = $data->active;
+                $_SESSION['role'] = $data->role;
+
+                //Test des droits
+                switch ($data->role) {
+                    case 'ADMIN':
+                        header("location:" . "../crud/index.php");
+                        exit;
+                        break;
+
+                    case 'OPERATEUR':
+                        header("location:" . "../index.php");
+                        exit;
+                        break;
+                }
+            } else {
+                //Le compte est inactif
+                $msg = "Login ou mot de passe incorrect";
+
+                //Redirection
+                header("location:" . "login.php?msg=$msg");
+                exit;
+            }
         } else {
-            $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
+            //Aucun utilisateur
+            $msg = "Login ou mot de passe incorrect";
+
+            //Redirection
+            header("location:" . "login.php?msg=$msg");
+            exit;
         }
     }
     ?>
+
     <form class="box" action="" method="post" name="login">
-        
+
         <h1 class="box-title">Connexion</h1>
         <input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur">
         <input type="password" class="box-input" name="password" placeholder="Mot de passe">

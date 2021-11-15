@@ -380,7 +380,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                         </label>
 
                         <div>
-                            <input class="form-control" name="enService" type="text" placeholder="En Service" value="<?php echo !empty($enService) ? $enService : ''; ?>">
+                            <!-- <input class="form-control" name="enService" type="text" placeholder="En Service" value="<?php echo !empty($enService) ? $enService : ''; ?>"> -->
+                            <select class="form-select" name="enService">
+                                <option selected>Selectionner...</option>
+                                <option value="oui">oui</option>
+                                <option value="non">non</option>
+                            </select>
                             <?php if (!empty($enServiceError)) : ?>
                                 <span class="help-inline text-danger"><?php echo $enServiceError; ?></span>
                             <?php endif; ?>
@@ -561,8 +566,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                         </label>
 
                         <div>
-                            <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>">
-                            <!-- <select class="form-select" id="vpn" name="vpn">
+                            <select class="form-select" name="vpn">
+                                <option selected>Selectionner...</option>
+                                <option value="oui">oui</option>
+                                <option value="non">non</option>
+                            </select>
+                            <!-- <input class="form-control" name="vpn" type="text" placeholder="VPN" value="<?php echo !empty($vpn) ? $vpn : ''; ?>">
+                            <select class="form-select" id="vpn" name="vpn">
                                 <option value="oui">oui</option>
                                 <option value="non">non</option>
                             </select> -->
@@ -573,7 +583,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                     </div>
                 </div>
-
             </div>
             <div class="form-actions mt-3">
                 <input type="submit" class="btn btn-success" name="submit" value="Envoyer">
