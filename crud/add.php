@@ -382,7 +382,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                         <div>
                             <!-- <input class="form-control" name="enService" type="text" placeholder="En Service" value="<?php echo !empty($enService) ? $enService : ''; ?>"> -->
                             <select class="form-select" name="enService">
-                                <option selected>Selectionner...</option>
+                                <option selected="selected">Selectionner...</option>
                                 <option value="oui">oui</option>
                                 <option value="non">non</option>
                             </select>
@@ -567,7 +567,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
 
                         <div>
                             <select class="form-select" name="vpn">
-                                <option selected>Selectionner...</option>
+                                <option selected="selected">Selectionner...</option>
                                 <option value="oui">oui</option>
                                 <option value="non">non</option>
                             </select>

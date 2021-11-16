@@ -38,6 +38,8 @@ if (!isset($_SESSION["username"])) {
 
             <a href="add.php" class="btn btn-success col-2">Ajouter un Equipement</a>
 
+            <a href="../fichierexcel/csv.php"><button type="button" class="btn btn-info">Exporter xls</button></a>
+
             <div class="table-responsive mt-3">
 
                 <table class="table table-striped table-bordered" id="customer_data">
@@ -80,11 +82,11 @@ if (!isset($_SESSION["username"])) {
                 },
                 dom: 'lBfrtip',
                 buttons: [
-                    'excel', 'csv',
+                    // 'excel', 'csv',
                 ],
                 "lengthMenu": [
-                    [25, 50, -1],
-                    [25, 50, "All"]
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
                 ]
             });
 

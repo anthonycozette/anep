@@ -600,8 +600,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
                             <select class="form-select" name="vpn">
 
                                 <option value="oui" <?= $vpn == 'oui' ? ' selected="selected"' : ''; ?>>oui</option>
-                                <option value="oui" <?= $vpn == 'non' ? ' selected="selected"' : ''; ?>>non</option>
-
+                                <option value="non" <?= $vpn == 'non' ? ' selected="selected"' : ''; ?>>non</option>
                             </select>
                             <?php if (!empty($vpnError)) : ?>
                                 <span class="help-inline text-danger"><?php echo $vpnError; ?></span>

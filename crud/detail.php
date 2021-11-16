@@ -35,7 +35,6 @@ if (null == $id) {
     <title>Detail Ordinateur</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../styles/styles.css" rel="stylesheet">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cscript%20src%3D%22js%2Fbootstrap.min.js%22%3E%3C%2Fscript%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="<script>" title="<script>" />
 </head>
 
 <body>
@@ -67,10 +66,6 @@ if (null == $id) {
                 <div class="control-group">
                     <label class="control-label"><strong>Réf Qualité:</strong> <?php echo $data['ref_qualite']; ?></label>
                 </div>
-
-                <!-- <div class="control-group">
-                    <label class="control-label"><strong>En Production:</strong> <?php echo $data['production']; ?></label>
-                </div> -->
 
                 <div class="control-group">
                     <label class="control-label"><strong>Emplacement:</strong><?php echo $data['emplacement']; ?></label>

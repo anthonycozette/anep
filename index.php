@@ -31,7 +31,8 @@ if (!isset($_SESSION["username"])) {
     <div class="container">
 
         <div class="row">
-
+            <a href="./fichierexcel/csv.php">
+                <button type="button" class="btn btn-info">Exporter xls</button></a>
         </div>
 
         <div class="row" id="bordure">
@@ -76,7 +77,7 @@ if (!isset($_SESSION["username"])) {
                 },
                 dom: 'lBfrtip',
                 buttons: [
-                    'excel', 'csv',
+                    // 'excel', 'csv',
                 ],
                 "lengthMenu": [
                     [25, 50, -1],
