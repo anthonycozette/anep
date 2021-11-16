@@ -1,7 +1,3 @@
-/* body {
-    background: #1c242d;
-} */
-
 .box {
     border: 1px solid #c4c4c4;
     padding: 30px 25px 10px 25px;
@@ -81,10 +77,11 @@ h1.box-title {
     text-align: center;
 }
 
-.sucess a {
+
+/* .sucess a {
     text-decoration: none;
     color: #58aef7;
-}
+} */
 
 p.errorMessage {
     background-color: #e66262;

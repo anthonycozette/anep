@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../styles/style.css" />
 </head>
 
-<body>
+<body style="background-color: #1c242d;">
     <?php
     require('config.php');
     session_start();
@@ -65,7 +65,7 @@
         <input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur">
         <input type="password" class="box-input" name="password" placeholder="Mot de passe">
         <input type="submit" value="Connexion " name="submit" class="box-button">
-        <p class="box-register">Vous êtes nouveau ici? <a href="register.php">S'inscrire</a></p>
+        <!-- <p class="box-register">Vous êtes nouveau ici? <a href="register.php">S'inscrire</a></p> -->
         <?php if (!empty($message)) { ?>
             <p class="errorMessage"><?php echo $message; ?></p>
         <?php } ?>

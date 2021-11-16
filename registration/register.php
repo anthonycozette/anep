@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../styles/style.css" />
 </head>
 
-<body>
+<body style="background-color: #1c242d;">
     <?php
     require('config.php');
     if (isset($_REQUEST['username'], $_REQUEST['password'], $_REQUEST['role'], $_REQUEST['active'])) {
@@ -37,7 +37,6 @@
             <h1 class="box-title">S'inscrire</h1>
             <input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur" required />
             <input type="password" class="box-input" name="password" placeholder="Mot de passe" required />
-            <!-- <input type="text" class="box-input" name="role" placeholder="Role" required /> -->
             <select class="box-select" name="role" required>
                 <option value="ADMIN">Admin</option>
                 <option value="OPERATEUR">User</option>

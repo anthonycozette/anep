@@ -26,7 +26,8 @@ if (!isset($_SESSION["username"])) {
     <div class="sucess">
         <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
         <h2>Liste des Equipements</h2>
-        <a class="btn btn-primary" href="../registration/logout.php">Déconnexion</a>
+        <a class="btn btn-danger" href="../registration/logout.php">Déconnexion</a>
+        <a class="btn btn-secondary" href="../registration/register.php">Nouveau Utilisateur</a>
     </div>
     <div class="container">
 
@@ -35,11 +36,13 @@ if (!isset($_SESSION["username"])) {
         </div>
 
         <div class="row" id="bordure">
+            <div>
+                <a href="add.php" class="btn btn-success col-2">Ajouter un Equipement</a>
+            </div>
 
-            <a href="add.php" class="btn btn-success col-2">Ajouter un Equipement</a>
-
-            <a href="../fichierexcel/csv.php"><button type="button" class="btn btn-info">Exporter xls</button></a>
-
+            <div class="mt-3">
+                <a href="../fichierexcel/csv.php" class="btn btn-info col-1">Exporter xls</a>
+            </div>
             <div class="table-responsive mt-3">
 
                 <table class="table table-striped table-bordered" id="customer_data">
