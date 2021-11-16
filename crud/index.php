@@ -41,7 +41,7 @@ if (!isset($_SESSION["username"])) {
             </div>
 
             <div class="mt-3">
-                <a href="../fichierexcel/csv.php" class="btn btn-info col-1">Exporter xls</a>
+                <a href="../fichierexcel/xls.php" class="btn btn-info col-1">Exporter xls</a>
             </div>
             <div class="table-responsive mt-3">
 

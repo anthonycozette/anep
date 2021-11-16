@@ -31,7 +31,7 @@ if (!isset($_SESSION["username"])) {
     <div class="container">
 
         <div class="row">
-            <a href="./fichierexcel/csv.php">
+            <a href="./fichierexcel/xls.php">
                 <button type="button" class="btn btn-info">Exporter xls</button></a>
         </div>
 
