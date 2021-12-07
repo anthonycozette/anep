@@ -37,10 +37,12 @@
             <h1 class="box-title">S'inscrire</h1>
             <input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur" required />
             <input type="password" class="box-input" name="password" placeholder="Mot de passe" required />
+            <p>choisir le role</p>
             <select class="box-select" name="role" required>
                 <option value="ADMIN">Admin</option>
                 <option value="OPERATEUR">User</option>
             </select>
+            <p>compte actif</p>
             <select class="box-select" name="active" required>
                 <option value="1">oui</option>
                 <option value="0">non</option>
